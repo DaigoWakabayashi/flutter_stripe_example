@@ -9,8 +9,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // ダッシュボードの公開可能キー
-  Stripe.publishableKey =
-      'pk_test_51M0db1Ek1lV8YCpRscOysEpa1E0x9ftsWvgZt8nBdoQ9GTeUyVU4c3GBgLFlA2Qaxigb9k5bcVnNSOVsVrehtN7V007XFCU35D';
+  Stripe.publishableKey = const String.fromEnvironment('STRIPE_PK_DEV');
 
   runApp(const App());
 }
