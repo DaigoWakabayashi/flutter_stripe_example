@@ -2,9 +2,8 @@ import * as functions from "firebase-functions";
 
 const stripe = require("stripe")(process.env.STRIPE_SK);
 
-export const createPaymentIntent = functions
-  .region(`asia-northeast1`)
-  .https.onRequest(async (req, res) => {
+export const createPaymentIntent = functions.https.onCall(
+  async (req, context) => {
     try {
       // 新しい customer を作成（既存の場合は id を渡せばOK）
       const customer = await stripe.customers.create();
@@ -24,17 +23,20 @@ export const createPaymentIntent = functions
         },
       });
       // アプリ側で必要な値を返却
-      res.status(200).send({
+      return {
+        code: 200,
         paymentIntent: paymentIntent.client_secret,
         ephemeralKey: ephemeralKey.secret,
         customer: customer.id,
         publishableKey: process.env.STRIPE_PK,
-      });
+      };
     } catch (error) {
       console.error(`error: %j`, error);
-      res.status(400).send({
+      return {
+        code: 400,
         title: `エラーが発生しました`,
         message: error,
-      });
+      };
     }
-  });
+  }
+);

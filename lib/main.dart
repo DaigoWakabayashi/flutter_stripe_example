@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:flutter_stripe_example/config/app_color.dart';
@@ -5,8 +6,13 @@ import 'package:flutter_stripe_example/pages/card_field_page.dart';
 import 'package:flutter_stripe_example/pages/card_form_page.dart';
 import 'package:flutter_stripe_example/pages/payment_sheet_page.dart';
 
+import 'firebase_options.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Firebase の初期化
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   // ダッシュボードの公開可能キー
   Stripe.publishableKey = const String.fromEnvironment('STRIPE_PK_DEV');

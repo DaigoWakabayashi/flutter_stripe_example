@@ -1,5 +1,44 @@
 PODS:
+  - cloud_functions (4.0.5):
+    - Firebase/Functions (= 10.2.0)
+    - firebase_core
+    - Flutter
+  - Firebase/CoreOnly (10.2.0):
+    - FirebaseCore (= 10.2.0)
+  - Firebase/Functions (10.2.0):
+    - Firebase/CoreOnly
+    - FirebaseFunctions (~> 10.2.0)
+  - firebase_core (2.3.0):
+    - Firebase/CoreOnly (= 10.2.0)
+    - Flutter
+  - FirebaseAppCheckInterop (10.2.0)
+  - FirebaseAuthInterop (10.2.0)
+  - FirebaseCore (10.2.0):
+    - FirebaseCoreInternal (~> 10.0)
+    - GoogleUtilities/Environment (~> 7.8)
+    - GoogleUtilities/Logger (~> 7.8)
+  - FirebaseCoreExtension (10.2.0):
+    - FirebaseCore (~> 10.0)
+  - FirebaseCoreInternal (10.2.0):
+    - "GoogleUtilities/NSData+zlib (~> 7.8)"
+  - FirebaseFunctions (10.2.0):
+    - FirebaseAppCheckInterop (~> 10.0)
+    - FirebaseAuthInterop (~> 10.0)
+    - FirebaseCore (~> 10.0)
+    - FirebaseCoreExtension (~> 10.0)
+    - FirebaseMessagingInterop (~> 10.0)
+    - FirebaseSharedSwift (~> 10.0)
+    - GTMSessionFetcher/Core (< 4.0, >= 2.1)
+  - FirebaseMessagingInterop (10.2.0)
+  - FirebaseSharedSwift (10.2.0)
   - Flutter (1.0.0)
+  - GoogleUtilities/Environment (7.10.0):
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.10.0):
+    - GoogleUtilities/Environment
+  - "GoogleUtilities/NSData+zlib (7.10.0)"
+  - GTMSessionFetcher/Core (3.0.0)
+  - PromisesObjC (2.1.1)
   - Stripe (22.8.4):
     - Stripe/Stripe3DS2 (= 22.8.4)
     - StripeApplePay (= 22.8.4)
@@ -23,11 +62,25 @@ PODS:
     - StripeCore (= 22.8.4)
 
 DEPENDENCIES:
+  - cloud_functions (from `.symlinks/plugins/cloud_functions/ios`)
+  - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
   - stripe_ios (from `.symlinks/plugins/stripe_ios/ios`)
 
 SPEC REPOS:
   trunk:
+    - Firebase
+    - FirebaseAppCheckInterop
+    - FirebaseAuthInterop
+    - FirebaseCore
+    - FirebaseCoreExtension
+    - FirebaseCoreInternal
+    - FirebaseFunctions
+    - FirebaseMessagingInterop
+    - FirebaseSharedSwift
+    - GoogleUtilities
+    - GTMSessionFetcher
+    - PromisesObjC
     - Stripe
     - StripeApplePay
     - StripeCore
@@ -35,13 +88,31 @@ SPEC REPOS:
     - StripeUICore
 
 EXTERNAL SOURCES:
+  cloud_functions:
+    :path: ".symlinks/plugins/cloud_functions/ios"
+  firebase_core:
+    :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
     :path: Flutter
   stripe_ios:
     :path: ".symlinks/plugins/stripe_ios/ios"
 
 SPEC CHECKSUMS:
+  cloud_functions: b55a388198fc5a3135d0c5f2e36e8d168054ba06
+  Firebase: a3ea7eba4382afd83808376edb99acdaff078dcf
+  firebase_core: db1432de826785171029b7c1a26e5b22ce1dd477
+  FirebaseAppCheckInterop: af164d9c623f82174e3ffa54394dee189587c601
+  FirebaseAuthInterop: 027d42ca8fec84dc6151566479af05095a0bd5c0
+  FirebaseCore: 813838072b797b64f529f3c2ee35e696e5641dd1
+  FirebaseCoreExtension: d08b424832917cf13612021574399afbbedffeef
+  FirebaseCoreInternal: 091bde13e47bb1c5e9fe397634f3593dc390430f
+  FirebaseFunctions: eaa208f64f2f179f0ab9b775fecdec07fdd74d90
+  FirebaseMessagingInterop: b46e7fcf39c0e9b16841e258645a320a154af240
+  FirebaseSharedSwift: a160b39d4ce77be922b3d6ff009099c7294e36e5
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  GoogleUtilities: bad72cb363809015b1f7f19beb1f1cd23c589f95
+  GTMSessionFetcher: c1edebe64e9fb4e8f6415d018edf1fd3eac074a1
+  PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   Stripe: 59f6659e8ea413def19c97c57e23f5ec6ea48cf8
   stripe_ios: 8ad17b19d7d2189d7c19fd15d9ecffeca696390f
   StripeApplePay: 6e9aebd3d248464836e9fbdaef6e5fb1817d56a6
@@ -49,6 +120,6 @@ SPEC CHECKSUMS:
   StripeFinancialConnections: 955c345ada7d0dff1a9bd15c4ebc97eacce4ac75
   StripeUICore: 6a5bbea0164d63bd91000f001903e7901859e1a4
 
-PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
+PODFILE CHECKSUM: 4e8f8b2be68aeea4c0d5beb6ff1e79fface1d048
 
 COCOAPODS: 1.11.3
