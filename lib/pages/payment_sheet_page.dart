@@ -41,8 +41,20 @@ class PaymentSheetPage extends StatelessWidget {
 
                   // 4. 決済を確定
                   await Stripe.instance.confirmPaymentSheetPayment();
+                } on StripeException catch (e) {
+                  final error = e.error;
+                  switch (error.code) {
+                    case FailureCode.Canceled:
+                      log('キャンセルされました', error: e);
+                      break;
+                    case FailureCode.Failed:
+                      log('エラーが発生しました', error: e);
+                      break;
+                  }
+                } on FirebaseFunctionsException catch (e) {
+                  log('エラーが発生しました', error: e);
                 } catch (e) {
-                  log(e.toString());
+                  log('不明なエラーが発生しました', error: e);
                 }
               },
               child: const Text('Call PaymentIntent API'),
