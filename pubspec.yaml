@@ -15,6 +15,7 @@ dependencies:
   flutter_stripe: ^6.0.0
   cloud_functions: ^4.0.5
   firebase_core: ^2.3.0
+  flutter_hooks: ^0.18.5+1
 
 dev_dependencies:
   flutter_test:
